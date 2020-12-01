@@ -1,3 +1,3 @@
-angular.module('forum').controller('ProfileController', function () {
+angular.module('forum').controller('ProfileController', function ($scope) {
     
 });

@@ -1,3 +1,3 @@
-angular.module('forum').controller('RegisterController', function () {
+angular.module('forum').controller('RegisterController', function ($scope) {
     
 });

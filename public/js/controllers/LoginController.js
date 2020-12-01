@@ -1,3 +1,3 @@
-angular.module('forum').controller('LoginController', function () {
+angular.module('forum').controller('LoginController', function ($scope) {
     
 });

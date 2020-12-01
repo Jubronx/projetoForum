@@ -23,6 +23,8 @@ angular.module('forum').config(function($routeProvider) {
         templateUrl: 'templates/profile.html',
         controller: 'ProfileController'
     })
-    .otherwise({ redirectTo: '/404.html' });
+    .otherwise({ 
+        templateUrl: 'templates/404.html',
+    });
 
 });
