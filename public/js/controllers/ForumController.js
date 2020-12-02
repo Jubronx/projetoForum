@@ -1,4 +1,4 @@
-angular.module('forum').controller('ForumController', function($scope) {
+forum_app.controller('ForumController', function($scope) {
 
 });
 

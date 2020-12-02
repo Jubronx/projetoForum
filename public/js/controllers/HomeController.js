@@ -1,4 +1,4 @@
-angular.module('forum').controller('HomeController', function ($scope) {
+forum_app.controller('HomeController', function ($scope) {
 
     $scope.alou = 'Hello world';
 });

@@ -1,6 +1,6 @@
-angular.module('forum', ['ngRoute', 'ngResource']);
+var forum_app = angular.module('forum', ['ngRoute', 'ngResource']);
 
-angular.module('forum').config(function($routeProvider) {
+forum_app.config(function($routeProvider) {
     
     $routeProvider
     .when('/', {
