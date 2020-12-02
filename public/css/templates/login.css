@@ -2,22 +2,18 @@
     display: flex;
     justify-content: center;
     height: 950px;
+    background-color: #C4C4C4;
 }
 
 .login_form {
     align-self: center;
-    width: 500px;
+    width: 50%;
+    height: 100%;
+    background-color: #E7E7E7;
+    box-shadow: 0 2px 2px #E7E7E7;
 }
 
 .login_item {
-    margin: 16px 0
-}
-
-.login_item label{
-
-}
-
-.login_item input{
-    border: none;
-    border-radius: 10px;
+    margin: 16px 0;
+    flex-wrap: wrap;
 }
