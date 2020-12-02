@@ -1,16 +1,22 @@
 .login_body  {
     display: flex;
     justify-content: center;
-    height: 950px;
+    height: 100%;
     background-color: #C4C4C4;
+}
+
+.login_container {
+    align-self: center;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+    background-color: #E7E7E7;
+    box-shadow: 0 2px 2px #E7E7E7;
 }
 
 .login_form {
     align-self: center;
-    width: 50%;
-    height: 100%;
-    background-color: #E7E7E7;
-    box-shadow: 0 2px 2px #E7E7E7;
 }
 
 .login_item {
