@@ -1,0 +1,12 @@
+.register_body {
+    display: flex;
+    justify-content: center;
+    height: 900px;
+}
+.register_form {
+    align-self: center;
+    width: 500px;
+}
+.register_itens {
+    margin: 16px 0;
+}
