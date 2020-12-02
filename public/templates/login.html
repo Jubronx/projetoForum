@@ -6,14 +6,28 @@
 </head>
 <body>
     <div class="login_body">
-        <div class="login_form">
-            <div class="login_item">
-                <h2 for="">Email ou username</h2>
-                <input type="text" name="nome" id="" ng-model="nome">
+        <div class="login_container">
+            <div class="login_form">
+                <form action="">
+                    <div class="login_item">
+                        <h2 for="">E-mail</h2>
+                        <input required type="text" name="email" id="" ng-model="nome">
+                    </div>
+                    <div class="login_item">
+                        <div class="remember">
+                            <h2 for="">Senha</h2>
+                            <a href="">Esqueci minha senha</a>
+                        </div>
+                        <input required type="password" name="senha" id="" ng-model="senha">
+                    </div>
+                    <div class="login_item">
+                        <button type="submit">Entrar</button>
+                    </div>
+                </form>
             </div>
-            <div class="login_item">
-                <h2 for="">Senha</h2>
-                <input type="password" name="senha" id="" ng-model="senha">
+            <div class="login_footer">
+                <h3>Não tem uma conta?</h3>
+                <a href="">Registre-se</a>
             </div>
         </div>
     </div>
