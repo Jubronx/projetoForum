@@ -4,42 +4,12 @@
     height: 100%;
 }
 .register_form {
-
-   
     display: inline-block;
     text-align: center;
     width: 500px;
 }
-.register_item {
-    
+.register_item { 
     width: 90px;
     margin: 28px 0;
 }
-h2{
-    font-family:Raleway;
-    font-weight: Medium;
-    font-size: 10px ;
-    text-align: left;
-}
-button{
-    box-shadow: 0px 1px 0px 0px #f0f7fa;
-	background:linear-gradient(to bottom, #781AEF 5%, #781AEF 100%);
-	background-color:#781AEF;
-	border-radius:6px;
-	border:1px solid #781AEF;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Raleway;
-	font-size:14px;
-	font-weight:Medium;
-	padding:6px 24px;
-	text-decoration:none;
-    height: 30px;  
-    width:  174px;
-}
 
-button:hover{
-    background:linear-gradient(to bottom, #42068f 5%, #42068f 100%);
-	background-color:#824ec5;
-}
