@@ -1,12 +1,15 @@
 .register_body {
     display: flex;
     justify-content: center;
-    height: 900px;
+    height: 100%;
 }
 .register_form {
-    align-self: center;
+    display: inline-block;
+    text-align: center;
     width: 500px;
 }
-.register_itens {
-    margin: 16px 0;
+.register_item { 
+    width: 90px;
+    margin: 28px 0;
 }
+

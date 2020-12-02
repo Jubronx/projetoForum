@@ -31,3 +31,30 @@ h2 {
     font-weight: 600;
     font-size: 16px;
 }
+
+button {
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #781AEF 5%, #781AEF 100%);
+	background-color:#781AEF;
+	border-radius:6px;
+	border:1px solid #781AEF;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:14px;
+	padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #5b6178;
+    height: 30px;  
+    width:  174px;
+}
+
+button:hover {
+    background:linear-gradient(to bottom, #42068f 5%, #42068f 100%);
+	background-color:#824ec5;
+}
+
+button:active {
+	position:relative;
+	top:1px;
+}
