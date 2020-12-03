@@ -1,35 +1,45 @@
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faça seu login</title>
-</head>
-<body>
-    <div class="login_body">
-        <div class="login_container">
-            <div class="login_form">
-                <form action="">
-                    <div class="login_item">
-                        <h2 for="">E-mail</h2>
-                        <input required type="text" name="email" id="" ng-model="nome">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Faça seu login</title>
+    </head>
+
+    <body>
+        <div class="login_body">
+            <div class="login_container">
+
+                <div class="login_form">
+
+                    <div class="google_integration">
+                        <button class="default-button"><i class="fa fa-google"></i>Login com Google</button>
                     </div>
-                    <div class="login_item">
-                        <div class="remember">
-                            <h2 for="">Senha</h2>
-                            <a href="">Esqueci minha senha</a>
+
+                    <form action="">
+                        <div class="login_item">
+                            <h2 for="">E-mail</h2>
+                            <input required placeholder="Insira seu email cadastrado" type="text" name="email" ng-model="nome">
                         </div>
-                        <input required type="password" name="senha" id="" ng-model="senha">
-                    </div>
-                    <div class="login_item">
-                        <button type="submit">Entrar</button>
-                    </div>
-                </form>
-            </div>
-            <div class="login_footer">
-                <h3>Não tem uma conta?</h3>
-                <a href="">Registre-se</a>
+                        <div class="login_item">
+                            <div class="remember">
+                                <h2 for="">Senha</h2>
+                                <a href="">Esqueci minha senha</a>
+                            </div>
+                            <input required type="password" placeholder="Insira sua senha cadastrada" name="senha" ng-model="senha">
+                        </div>
+                        <div class="login_item">
+                            <button class="primary-button" type="submit">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="login_footer">
+                    <h3>Não tem uma conta?</h3>
+                    <a href="">Registre-se</a>
+                </div>
+
             </div>
         </div>
-    </div>
-</body>
+    </body>
+
 </html>
