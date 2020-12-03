@@ -11,17 +11,17 @@
                 <form action="">
                     <div class="login_item">
                         <h2 for="">E-mail</h2>
-                        <input required type="text" name="email" id="" ng-model="nome">
+                        <input required type="text" name="nome"  ng-model="nome">
                     </div>
                     <div class="login_item">
                         <div class="remember">
                             <h2 for="">Senha</h2>
                             <a href="">Esqueci minha senha</a>
                         </div>
-                        <input required type="password" name="senha" id="" ng-model="senha">
+                        <input required type="password" name="senha" ng-model="senha">
                     </div>
                     <div class="login_item">
-                        <button type="submit">Entrar</button>
+                        <button type="submit" ng-click="login()">Entrar</button>
                     </div>
                 </form>
             </div>

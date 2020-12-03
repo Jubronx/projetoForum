@@ -1,3 +1,4 @@
 <?php 
-
-print_r($_POST);
+    header('Access-Control-Allow-Origin: *');
+    print_r($_POST);
+?>
