@@ -7,7 +7,7 @@
 
 .login_container {
     align-self: center;
-    width: 40%;
+    width: 35%;
     height: 100%;
     display: flex;
     place-content: center;
@@ -22,11 +22,15 @@
     max-width: 100%;
 }
 
+.google_integration {
+    margin: 48px 0;
+}
+
 .login_footer {
     align-self: center;
-    position: absolute;
     display: flex;
-    bottom: 20px;;
+    position: absolute;
+    bottom: 20px;
 }
 
 .login_item {

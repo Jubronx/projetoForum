@@ -1,39 +1,47 @@
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastre-se no Fórum</title>
-</head>
-<body>
-    <div class="register_body">     
-        <div class="register_container">
-            <div class="register_form">
-                <form action=""></form>
-                    <div class="register_item">
-                        <h2>Nome de Exibição</h2>
-                        <input type="text" name="name" id="usuario">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastre-se no Fórum</title>
+    </head>
+
+    <body>
+        <div class="register_body">     
+            <div class="register_container">
+
+                <div class="register_form">
+
+                    
+                    <div class="google_integration">
+                        <button class="default-button"><i class="fa fa-google"></i>Cadastrar-se com Google</button>
                     </div>
-                    <div class="register_item">
-                        <h2>E-mail</h2>
-                        <input required type="email" name="email" id="">
-                    </div>
-                    <div class="register_item">
-                        <div class="remember">
-                            <h2 for="">Senha</h2>
-                            <a href="">Esqueci minha senha</a>
+
+                    <form action=""></form>
+                        <div class="register_item">
+                            <h2>Nome de Exibição</h2>
+                            <input required type="text" placeholder="Insira seu nome de usuario" name="name">
                         </div>
-                        <input required type="password" name="senha" id=""> 
-                    </div>
-                    <div class="register_item">
-                        <button type="submit">Cadastre-se</button> 
-                    <div>    
-                </form>
-            </div>
-            <div class="login_footer">
-                <h3>Já tem uma conta?</h3>
-                <a href="">Entrar</a>
+                        <div class="register_item">
+                            <h2 for="">E-mail</h2>
+                            <input required type="email" name="email" pattern="[^ @]*@[^ @]*" placeholder="Insira seu email">
+                        </div>
+                        <div class="register_item">
+                            <h2 for="">Senha</h2>
+                            <input required type="password" placeholder="Insira sua senha" name="senha"> 
+                        </div>
+                        <div class="register_item">
+                            <button class="primary-button" type="submit">Cadastre-se</button> 
+                        </div>    
+                    </form>
+                </div>
+
+                <div class="register_footer">
+                    <h3>Já tem uma conta?</h3>
+                    <a href="">Entrar</a>
+                </div>
+
             </div>
         </div>
-    </div>
-</body>
+    </body>
+
 </html>

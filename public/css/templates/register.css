@@ -2,18 +2,46 @@
     display: flex;
     justify-content: center;
     height: 100%;
-}
-.register_form {
-    display: inline-block;
-    text-align: center;
-    width: 500px;
-}
-.register_item { 
-    width: 90px;
-    margin: 28px 0;
+    background-color: #C4C4C4;
 }
 
-.remember {
+.register_container {
+    align-self: center;
+    width: 35%;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
+    place-content: center;
+    background-color: #E7E7E7;
+    box-shadow: 0 2px 2px #E7E7E7;
+    flex-direction: column;
+}
+
+.register_form {
+    align-self: center;
+    width: 60%;
+    max-width: 100%;
+}
+
+.google_integration {
+    margin: 48px 0;
+}
+
+.google_integration button {
+    background-image: url('public/assets/img/google.png');
+}
+
+.register_footer {
+    align-self: center;
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+}
+
+.register_item { 
+    margin: 0 0 32px 0;
+    flex-wrap: wrap;
+}
+
+.register_item input{
+    background: #C4C4C4;
 }

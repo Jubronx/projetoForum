@@ -19,14 +19,24 @@ body {
 
 input {
     height: 24px;
-    padding: 6px 0;
+    padding: 8px 0 8px 16px;
     font-size: 14px;
     line-height: 18px;
     border: none;
     border-radius: 5px;
     margin-top: 8px;
-    width: 200px;
     width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+input:valid {
+    box-shadow: 0 0 3px 3px #61acb8;
+}
+
+input:focus {
+    border: none;
+    outline: none;
 }
 
 h1 {
@@ -56,7 +66,7 @@ a:hover {
     color: #3b3b4f;
 }
 
-button {
+.primary-button{
     box-shadow: 0px 1px 0px 0px #f0f7fa;
 	background: linear-gradient(to bottom, #781AEF 5%, #781AEF 100%);
 	background-color: #781AEF;
@@ -68,16 +78,41 @@ button {
 	color: #ffffff;
 	font-size: 16px;
 	padding: 6px 0;
+	margin-top: 16px;
     text-decoration: none;
     text-shadow: 0px -1px 0px #5b6178;
     width: 100%;
     height: 40px;
 }
 
-button:hover {
+.default-button{
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background: linear-gradient(to bottom, #fff 5%, #fff 100%);
+	background-color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+	display: inline-block;
+	cursor: pointer;
+	color: #00000000;
+	font-size: 16px;
+	padding: 6px 0;
+	margin-top: 16px;
+    text-decoration: none;
+    outline: none;
+    text-shadow: 0px -1px 0px #5b6178;
+    width: 100%;
+    height: 44px;
+}
+
+button i {
+    margin: 0 8px;
+}
+
+.primary-button:hover {
     background:linear-gradient(to bottom, #42068f 5%, #42068f 100%);
 	background-color:#824ec5;
 }
+
 
 button:active {
 	position:relative;
