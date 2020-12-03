@@ -26,10 +26,6 @@
     margin: 48px 0;
 }
 
-.google_integration button {
-    background-image: url('public/assets/img/google.png');
-}
-
 .register_footer {
     align-self: center;
     position: absolute;

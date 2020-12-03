@@ -9,7 +9,7 @@ forum_app.controller('LoginController', function($scope, $http) {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            data: 'email= '+nome+'&senha= '+senha
+            data: 'email=' +nome+ '&senha=' +senha
         }).then(function(response) {
             console.log(response.data);
         })

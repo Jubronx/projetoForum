@@ -15,22 +15,20 @@
                         <button class="default-button"><i class="fa fa-google"></i>Login com Google</button>
                     </div>
 
-                    <form action="">
-                        <div class="login_item">
-                            <h2 for="">E-mail</h2>
-                            <input required type="email" name="email" ng-model="nome" pattern="[^ @]*@[^ @]*" placeholder="Insira seu email cadastrado">
+                    <div class="login_item">
+                        <h2 for="">E-mail</h2>
+                        <input required type="email" name="email" ng-model="nome" pattern="[^ @]*@[^ @]*" placeholder="Insira seu email cadastrado">
+                    </div>
+                    <div class="login_item">
+                        <div class="remember">
+                            <h2 for="">Senha</h2>
+                            <a href="">Esqueci minha senha</a>
                         </div>
-                        <div class="login_item">
-                            <div class="remember">
-                                <h2 for="">Senha</h2>
-                                <a href="">Esqueci minha senha</a>
-                            </div>
-                            <input required type="password" placeholder="Insira sua senha cadastrada" name="senha" ng-model="senha">
-                        </div>
-                        <div class="login_item">
-                            <button class="primary-button" type="submit">Entrar</button>
-                        </div>
-                    </form>
+                        <input required type="password" placeholder="Insira sua senha cadastrada" name="senha" ng-model="senha">
+                    </div>
+                    <div class="login_item">
+                        <button class="primary-button" ng-click="login()" type="submit">Entrar</button>
+                    </div>
                 </div>
 
                 <div class="login_footer">
