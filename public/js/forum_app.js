@@ -1,6 +1,6 @@
 var forum_app = angular.module('forum', ['ngRoute', 'ngResource']);
 
-forum_app.config(function($routeProvider) {
+forum_app.config(function ($routeProvider) {
     
     $routeProvider
     .when('/', {
@@ -8,10 +8,18 @@ forum_app.config(function($routeProvider) {
         controller: 'HomeController'
     })
     .when('/home', {
+        resolve: {
+            check: function ($location, user) {
+                if (!user.isUserLoggedIn()) {
+                    $location.path('/login');
+                }
+            },
+        },
         templateUrl: 'templates/home.html',
         controller: 'HomeController'
     })
     .when('/login', {
+        
         templateUrl: 'templates/login.html',
         controller: 'LoginController'
     })
@@ -26,5 +34,4 @@ forum_app.config(function($routeProvider) {
     .otherwise({ 
         templateUrl: 'templates/404.html',
     });
-
 });

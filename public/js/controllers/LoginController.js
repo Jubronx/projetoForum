@@ -1,18 +1,23 @@
-forum_app.controller('LoginController', function($scope, $http) {
-    
-    $scope.login = function() {
-        var nome = $scope.nome;
-        var senha = $scope.senha;
-        $http({
+forum_app.controller('LoginController', function ($scope, $http, $location, user) {
+    $scope.login = function () {
+        var request = $http({
             url: 'http://localhost/projetoForum/public/server/server.php',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+            method: "post",
+            data: {
+                email: $scope.email,
+                senha: $scope.senha
             },
-            data: 'email=' +nome+ '&senha=' +senha
-        }).then(function(response) {
-            console.log(response.data);
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+        request.then(function (response) {
+            if (response.data.status == 'loggedin') {
+                user.userLoggedIn();
+                user.setEmail(response.data.user);
+                $location.path('/home');
+            } else {
+                alert('invalid login');
+            }
         })
     }
-    
+   
 });
