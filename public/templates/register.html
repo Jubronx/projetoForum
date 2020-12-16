@@ -18,18 +18,18 @@
 
                     <div class="register_item">
                         <h2>Nome de Exibição</h2>
-                        <input required type="text" placeholder="Insira seu nome de usuario" name="name">
+                        <input required type="text" placeholder="Insira seu nome de usuario" name="nome" ng-model="regiterData.nome" >
                     </div>
                     <div class="register_item">
                         <h2 for="">E-mail</h2>
-                        <input required type="email" name="email" pattern="[^ @]*@[^ @]*" placeholder="Insira seu email">
+                        <input required type="email" name="email" pattern="[^ @]*@[^ @]*" placeholder="Insira seu email" ng-model="registerData.email">
                     </div>
                     <div class="register_item">
                         <h2 for="">Senha</h2>
-                        <input required type="password" placeholder="Insira sua senha" name="senha"> 
+                        <input required type="password" placeholder="Insira sua senha" name="senha" ng-model="registerData.senha"> 
                     </div>
                     <div class="register_item">
-                        <button class="primary-button" type="submit">Cadastre-se</button> 
+                        <button class="primary-button" ng-click = "register()" name= "register" type="submit">Cadastre-se</button> 
                     </div>  
                 </div>
 

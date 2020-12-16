@@ -18,9 +18,30 @@ forum_app.service('user', function () {
     };
 
     this.isUserLoggedIn = function () {
+        if (!!localStorage.getItem('login')) {
+            loggedin = true;
+            var data = JSON.parse(localStorage.getItem('login'))
+            useremail = data.useremail;
+            id = data.id;
+        }
         return loggedin;
     };
-    this.userLoggedIn = function () {
+  
+    this.saveData = function (data) {
+        useremail = data.user;
+        id = data.id;
         loggedin = true;
+        localStorage.setItem('login', JSON.stringify({
+             useremail: useremail,
+             id: id
+           }))
     };
+
+    this.clearData = function () {
+        localStorage.removeItem('login');
+        useremail = '';
+        id = "";
+        loggedin = false;
+    }
+
 })

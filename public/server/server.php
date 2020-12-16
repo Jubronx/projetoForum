@@ -9,7 +9,7 @@ session_start();
 
 $response = []; 
 
-$con = mysqli_connect('127.0.0.1:3307', 'root', '', 'projectforum');
+include('connection.php');
 
 $input = file_get_contents("php://input");
 try {

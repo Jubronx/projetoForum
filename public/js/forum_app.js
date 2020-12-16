@@ -6,6 +6,15 @@ forum_app.config(function ($routeProvider) {
     .when('/', {
         templateUrl: 'templates/home.html',
         controller: 'HomeController'
+    }).when('/logout', {
+        resolve: {
+            deadResolve: function ($location, user) {
+                user.clearData();
+                location.path('/home');
+
+            }
+            
+        }
     })
     .when('/home', {
         resolve: {

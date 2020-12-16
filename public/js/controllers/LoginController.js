@@ -11,8 +11,8 @@ forum_app.controller('LoginController', function ($scope, $http, $location, user
         });
         request.then(function (response) {
             if (response.data.status == 'loggedin') {
-                user.userLoggedIn();
-                user.setEmail(response.data.user);
+               
+                user.saveData(response.data)
                 $location.path('/home');
             } else {
                 alert('invalid login');
