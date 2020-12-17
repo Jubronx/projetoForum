@@ -17,7 +17,7 @@
     if(empty($_POST->nome)) {
         $error[] = 'Name is Required';
     } else {
-        $data[':nome'] = $_POST->nome;
+        $nome = $_POST->nome;
     }
 
     //validação de nome
@@ -28,7 +28,7 @@
             $error[] = 'Invalid Email Format';
         }
         else {
-            $data[':email'] = $_POST->email;
+            $email = $_POST->email;
         }
     }
 
@@ -36,19 +36,14 @@
     if(empty($_POST->senha)) {
         $error[] = 'Password is Required';
     } else {
-        $data['senha'] = password_hash($_POST->senha, PASSWORD_DEFAULT);
+        $senha = password_hash($_POST->senha, PASSWORD_DEFAULT);
     }
 
     //cadastro
     if(empty($error)) {
-        $query = "INSERT INTO `usuario` (nome, email, senha) VALUES (:nome, :email, :senha)";
-        $statement = $con->prepare($query);
-
-        if($result->execute($data)) {
-            $message = 'Registration Completed';
-        }
-    } else {
-        $validation_error = implode(", ", $error);
+        $query = "INSERT INTO `usuario` (nome, email, senha) VALUES ('$nome','$email','$senha')";
+        $statement = mysqli_query($con, $query);
+       
     }
 
     //exception de erro
