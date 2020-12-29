@@ -1,34 +1,31 @@
 var forum_app = angular.module('forum', ['ngRoute', 'ngResource']);
 
 forum_app.config(function ($routeProvider) {
-    
+
     $routeProvider
     .when('/', {
         templateUrl: 'templates/home.html',
         controller: 'HomeController'
     }).when('/logout', {
         resolve: {
-            deadResolve: function ($location, user) {
-                user.clearData();
+            deadResolve: function ($location, UserModel) {
+                UserModel.clearData();
                 location.path('/home');
-
             }
-            
         }
     })
-    .when('/home', {
+    .when('/profile', {
         resolve: {
-            check: function ($location, user) {
-                if (!user.isUserLoggedIn()) {
+            check: function ($location, UserModel) {
+                if (!UserModel.isUserLoggedIn()) {
                     $location.path('/login');
                 }
             },
         },
-        templateUrl: 'templates/home.html',
-        controller: 'HomeController'
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileController'
     })
     .when('/login', {
-        
         templateUrl: 'templates/login.html',
         controller: 'LoginController'
     })
@@ -36,9 +33,9 @@ forum_app.config(function ($routeProvider) {
         templateUrl: 'templates/register.html',
         controller: 'RegisterController'
     })
-    .when('/profile', {
-        templateUrl: 'templates/profile.html',
-        controller: 'ProfileController'
+    .when('/home', {
+        templateUrl: 'templates/home.html',
+        controller: 'HomeController'
     })
     .otherwise({ 
         templateUrl: 'templates/404.html',

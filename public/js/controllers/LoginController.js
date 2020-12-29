@@ -1,4 +1,4 @@
-forum_app.controller('LoginController', function ($scope, $http, $location, user) {
+forum_app.controller('LoginController', function ($scope, $http, $location, UserModel) {
     $scope.login = function () {
         var request = $http({
             url: 'http://localhost/projetoForum/public/server/server.php',
@@ -11,13 +11,15 @@ forum_app.controller('LoginController', function ($scope, $http, $location, user
         });
         request.then(function (response) {
             if (response.data.status == 'loggedin') {
-               
-                user.saveData(response.data)
+                UserModel.saveData(response.data)
                 $location.path('/home');
             } else {
-                alert('invalid login');
+                alert('Login inválido');
             }
         })
     }
-   
+    
+    $scope.cadastro = function () {
+        $location.path('/register');  
+    }
 });

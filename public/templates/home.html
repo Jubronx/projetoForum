@@ -5,10 +5,43 @@
     <title>Bem-vindo ao Fórum</title>
 </head>
 <body>
-    <h1>Página principal do fórum</h1>
-    <h1>Welcome {{ user }}</h1>
-
-    <a href="#/login">Fazer login</a>
-    <a href="#/register">Fazer cadastro</a>
+    <div class="body">
+        <div class="header">
+            <div class="logo">
+                <i class="fa fa-stack-overflow"></i>
+            </div>
+            <div class="search">
+                <form onsubmit="event.preventDefault();" role="search">
+                    <input id="search" type="text" placeholder="Buscar novos posts" autofocus required />
+                    <button type="submit"><i class="fa fa-search"></i></button>    
+                </form>
+            </div>
+            <div class="navigation">
+                <div class="nav-buttons" ng-hide="loggedUser">
+                    <div class="button-item login-button">
+                        <button ng-click="login()" class="primary-button">Entrar</button>
+                    </div>
+                    <div class="button-item register-button">
+                        <button ng-click="cadastro()" class="primary-button">Registre-se</button>
+                    </div>
+                </div>
+                <div class="nav-user" ng-hide="!loggedUser">
+                    <i class="user-icon fa fa-user"></i>
+                    <i class="user-icon fa fa-sign-out" ng-click="logout()"></i>
+                </div>
+            </div>
+        </div>
+        <div class="info">
+            
+        </div>
+        <div class="content">
+            <div class="menu">
+                <!-- Menu -->
+            </div>
+            <div class="posts">
+                <!-- Posts -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>

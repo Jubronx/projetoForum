@@ -1,4 +1,4 @@
-forum_app.controller('RegisterController', function ($scope, $http) {
+forum_app.controller('RegisterController', function ($scope, $http, $location) {
     $scope.registerData = {};
 
     $scope.register = function () {
@@ -14,4 +14,8 @@ forum_app.controller('RegisterController', function ($scope, $http) {
         })
         
     };
+
+    $scope.login = function () {
+        $location.path('/login');  
+    }
 });

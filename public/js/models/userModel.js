@@ -1,4 +1,4 @@
-forum_app.service('user', function () {
+forum_app.service('UserModel', function () {
     var useremail;
     var loggedin = false;
     var id;
