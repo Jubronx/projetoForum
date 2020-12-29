@@ -14,4 +14,27 @@ forum_app.controller('HomeController', function ($scope, UserModel, $location) {
         UserModel.clearData();
         location.reload();
     }
+
+    $scope.menu = [
+        {
+            text: 'Inicial',
+            opened: true,
+        },
+        {
+            text: 'Perguntas',
+            opened: false,
+        },
+        {
+            text: 'Tags',
+            opened: false,
+        },
+        {
+            text: 'Usuários',
+            opened: false,
+        },
+        {
+            text: 'Sem Respostas',
+            opened: false,
+        }
+    ]
 });
