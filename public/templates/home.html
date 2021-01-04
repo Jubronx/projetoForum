@@ -38,14 +38,49 @@
 
             <div class="menu">
                 <ul>
-                    <li ng-repeat="item in menu""><a href="">{{item.text}}</a></li>
+                    <li ng-repeat="item in menu"><a href="#{{item.link}}">{{item.text}}</a></li>
                 </ul>   
             </div>
             
             <div class="posts">
-                <div>
+                <div id="inicial">
                     <h1>Inicial</h1>
+                    <div ng-repeat="post in publicacoes">
+                        <h3>{{post.title}}</h3>
+                        <h3>{{post.votes}}</h3>
+                    </div>
                 </div>
+
+                <div id="perguntas">
+                    <h1>Perguntas</h1>
+                </div>
+
+                <div id="tags">
+                    <h1>Tags</h1>
+                </div>
+
+                <div id="usuarios">
+                    <h1>Usuários</h1>
+                </div>
+
+                <div id="semRespostas">
+                    <h1>Sem Respostas</h1>
+                </div>
+
+                <script>
+                $(document).ready(function(){
+
+                    $('#perguntas, #tags, #usuarios, #semRespostas').hide();
+
+                    $("a").click(function(event) {
+                        event.preventDefault();
+                        var href = $(this).attr('href');
+                        $('#inicial, #perguntas, #tags, #usuarios, #semRespostas').hide();
+                        $(href).show();
+                    });
+
+                });
+                </script>
             </div>
         </div>
     </div>

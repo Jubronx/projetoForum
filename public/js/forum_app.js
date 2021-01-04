@@ -1,6 +1,6 @@
 var forum_app = angular.module('forum', ['ngRoute', 'ngResource']);
 
-forum_app.config(function ($routeProvider) {
+forum_app.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
     .when('/', {
@@ -40,4 +40,6 @@ forum_app.config(function ($routeProvider) {
     .otherwise({ 
         templateUrl: 'templates/404.html',
     });
+
+    $locationProvider.html5Mode(true);
 });
