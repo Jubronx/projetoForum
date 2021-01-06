@@ -37,23 +37,20 @@ input:focus {
 h1 {
     font-weight: 700;
     font-size: 18px;
-    margin-right: 8px;
 }
 
 h2 {
     font-weight: 600;
     font-size: 16px;
-    margin-right: 8px;
 }
 
 h3 {
     font-weight: 500;
     font-size: 14px;
-    margin-right: 8px;
 }
 
 a {
-    text-decoration: none !important;
+    text-decoration: none;
     color: #140FF2;
 }
 
@@ -72,7 +69,7 @@ a:hover {
 	cursor: pointer;
 	color: #ffffff;
 	font-size: 16px;
-	padding: 6px 6px;
+	padding: 8px 10px;
     text-decoration: none;
     text-shadow: 0px -1px 0px #5b6178;
     width: 100%;
@@ -89,7 +86,7 @@ a:hover {
 	cursor: pointer;
 	color: #00000000;
 	font-size: 16px;
-	padding: 6px 0;
+	padding: 8px 10px;
     text-decoration: none;
     outline: none;
     text-shadow: 0px -1px 0px #5b6178;
@@ -98,7 +95,7 @@ a:hover {
 }
 
 button i {
-    margin: 0 8px;
+    margin: 0 4px;
 }
 
 .primary-button:hover {

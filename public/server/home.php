@@ -12,7 +12,7 @@
     $response = []; 
     $input = file_get_contents("php://input");
 
-    $query = "SELECT title, (downvotes + upvotes) as votes FROM publicacao;";
+    $query = "SELECT * FROM publicacao;";
     $result = mysqli_query($con, $query);
 
     if(mysqli_num_rows($result) > 0) {

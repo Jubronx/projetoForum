@@ -31,6 +31,10 @@ forum_app.controller('HomeController', function ($scope, $http, UserModel, $loca
         location.reload();
     }
 
+    $scope.meuPerfil = function () {
+        $location.path('/profile');
+    }
+
     $scope.menu = [
         {
             text: 'Inicial',

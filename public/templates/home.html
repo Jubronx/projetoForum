@@ -19,20 +19,47 @@
             <div class="navigation">
                 <div class="nav-buttons" ng-hide="loggedUser">
                     <div class="button-item login-button">
-                        <button ng-click="login()" class="primary-button">Entrar</button>
+                        <button ng-click="login()" class="default-button">
+                            <i class="fa fa-user"></i>
+                            Entrar
+                        </button>
                     </div>
                     <div class="button-item register-button">
-                        <button ng-click="cadastro()" class="primary-button">Registre-se</button>
+                        <button ng-click="cadastro()" class="default-button">
+                            <i class="fa fa-user-plus"></i>
+                            Registre-se
+                        </button>
                     </div>
                 </div>
                 <div class="nav-user" ng-hide="!loggedUser">
-                    <i class="user-icon fa fa-user"></i>
-                    <i class="user-icon fa fa-sign-out" ng-click="logout()"></i>
+                    <div class="button-item register-button">
+                        <button ng-click="meuPerfil()" class="default-button">
+                            <i class="fa fa-user"></i>
+                            Meu Perfil
+                        </button>
+                    </div>
+                    <div class="button-item register-button">
+                        <button ng-click="logout()" class="default-button">
+                            <i class="fa fa-sign-out" ng-click=""></i>
+                            Sair
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="info">
-            
+            <div class="info-1">
+                <p>Contribua para o cenário de desenvolvimento</p>
+                <img src="/public/assets/img/contribua.svg" width="100" height="100" alt="">
+            </div>
+            <div class="info-2">
+                <p>Encontre as melhores soluções para os seus problemas</p>
+                <img src="/public/assets/img/encontre.svg" width="100" height="100" alt="">
+            </div>
+            <div class="info-1">
+                <p>Cresca com a comunidade de sua linguagem preferida</p>
+                <img src="/public/assets/img/construa.svg" width="100" height="100" alt="">
+            </div>
         </div>
         <div class="content">
 
@@ -43,27 +70,41 @@
             </div>
             
             <div class="posts">
-                <div id="inicial">
-                    <h1>Inicial</h1>
-                    <div ng-repeat="post in publicacoes">
-                        <h3>{{post.title}}</h3>
-                        <h3>{{post.votes}}</h3>
+                <div class="inicial" id="inicial">
+                    <h1>Em alta</h1>
+                    <div class="inicial-posts" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active == 0">
+                        <div class="post-title">
+                            <h1>{{post.title}}</h1>
+                        </div>
+                        <div class="post-info">
+                            <div class="votes">
+                                <h2>{{post.upvotes / post.downvotes}}</h2>
+                                <p>Rating</p>
+                            </div>
+                            <div class="post-replys">
+                                <h2>5</h2>
+                                <p>Respostas</p>
+                            </div>
+                            <div class="post-tag" ng-if="post.tag">
+                                <p>{{post.tag}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div id="perguntas">
+                <div class="perguntas" id="perguntas" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active && isAuthor()">
                     <h1>Perguntas</h1>
                 </div>
 
-                <div id="tags">
-                    <h1>Tags</h1>
+                <div class="tags" id="tags" ng-repeat="post in publicacoes" ng-click="openPost(post)">
+                    <h1>{{ post.tag }}</h1>
                 </div>
 
-                <div id="usuarios">
+                <div class="usuarios" id="usuarios">
                     <h1>Usuários</h1>
                 </div>
 
-                <div id="semRespostas">
+                <div class="sem-respostas" id="semRespostas">
                     <h1>Sem Respostas</h1>
                 </div>
 
