@@ -50,15 +50,15 @@
         <div class="info">
             <div class="info-1">
                 <p>Contribua para o cenário de desenvolvimento</p>
-                <img src="/public/assets/img/contribua.svg" width="100" height="100" alt="">
+                <img src="assets/img/contribua.svg" width="100" height="100" alt="">
             </div>
             <div class="info-2">
                 <p>Encontre as melhores soluções para os seus problemas</p>
-                <img src="/public/assets/img/encontre.svg" width="100" height="100" alt="">
+                <img src="assets/img/encontre.svg" width="100" height="100" alt="">
             </div>
             <div class="info-1">
                 <p>Cresca com a comunidade de sua linguagem preferida</p>
-                <img src="/public/assets/img/construa.svg" width="100" height="100" alt="">
+                <img src="assets/img/construa.svg" width="100" height="100" alt="">
             </div>
         </div>
         <div class="content">
@@ -92,27 +92,24 @@
                     </div>
                 </div>
 
-                <div class="perguntas" id="perguntas" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active && isAuthor()">
+                <div class="perguntas" style="display: none;" id="perguntas" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active && isAuthor()">
                     <h1>Perguntas</h1>
                 </div>
 
-                <div class="tags" id="tags" ng-repeat="post in publicacoes" ng-click="openPost(post)">
+                <div class="tags" style="display: none;" id="tags" ng-repeat="post in publicacoes" ng-click="openPost(post)">
                     <h1>{{ post.tag }}</h1>
                 </div>
 
-                <div class="usuarios" id="usuarios">
+                <div class="usuarios" style="display: none;" id="usuarios">
                     <h1>Usuários</h1>
                 </div>
 
-                <div class="sem-respostas" id="semRespostas">
+                <div class="sem-respostas" style="display: none;" id="semRespostas">
                     <h1>Sem Respostas</h1>
                 </div>
 
                 <script>
                 $(document).ready(function(){
-
-                    $('#perguntas, #tags, #usuarios, #semRespostas').hide();
-
                     $("a").click(function(event) {
                         event.preventDefault();
                         var href = $(this).attr('href');
