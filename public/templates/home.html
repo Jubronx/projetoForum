@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="body">
-        <div class="header">
+        <div class="profile-header">
             <div class="logo">
                 <i class="fa fa-stack-overflow"></i>
             </div>
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="info">
+        <div class="info" ng-hide="postOpened">
             <div class="info-1">
                 <p>Contribua para o cenário de desenvolvimento</p>
                 <img src="assets/img/contribua.svg" width="100" height="100" alt="">
@@ -65,47 +65,68 @@
 
             <div class="menu">
                 <ul>
-                    <li ng-repeat="item in menu"><a href="#{{item.link}}">{{item.text}}</a></li>
+                    <li ng-repeat="item in menu" ng-hide="item.link == 'perguntas' && !loggedUser"><a href="#{{item.link}}">{{item.text}}</a></li>
                 </ul>   
             </div>
             
-            <div class="posts">
-                <div class="inicial" id="inicial">
-                    <h1>Em alta</h1>
-                    <div class="inicial-posts" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active == 0">
-                        <div class="post-title">
-                            <h1>{{post.title}}</h1>
-                        </div>
-                        <div class="post-info">
-                            <div class="votes">
-                                <h2>{{post.upvotes / post.downvotes}}</h2>
-                                <p>Rating</p>
+            <div class="posts-container">
+                <div class="posts">
+                    <div class="inicial" id="inicial">
+                        <h1>Em alta</h1>
+                        <div class="inicial-posts" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active == 0">
+                            <div class="post-title">
+                                <h1>{{post.title}}</h1>
                             </div>
-                            <div class="post-replys">
-                                <h2>5</h2>
-                                <p>Respostas</p>
-                            </div>
-                            <div class="post-tag" ng-if="post.tag">
-                                <p>{{post.tag}}</p>
+                            <div class="post-info">
+                                <div class="votes">
+                                    <h2>{{post.upvotes / post.downvotes}}</h2>
+                                    <p>Rating</p>
+                                </div>
+                                <div class="post-replys">
+                                    <h2>5</h2>
+                                    <p>Respostas</p>
+                                </div>
+                                <div class="post-tag" ng-if="post.tag">
+                                    <p>{{post.tag}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+    
+                    <div class="perguntas" style="display: none;" id="perguntas" ng-repeat="perguntas in publicacoes" ng-click="openPost(perguntas)" ng-if="perguntas.active">
+                        <h1>Minhas perguntas</h1>
+                    </div>
+    
+                    <div class="tags" style="display: none;" id="tags" ng-repeat="postTag in publicacoes" ng-click="openPost(post)">
+                        <h1>{{ postTag.tag }}</h1>
+                    </div>
+    
+                    <div class="usuarios" style="display: none;" id="usuarios">
+                        <h1>Usuários</h1>
+                    </div>
+    
+                    <div class="sem-respostas" style="display: none;" id="semRespostas">
+                        <h1>Sem Respostas</h1>
+                    </div>
                 </div>
 
-                <div class="perguntas" style="display: none;" id="perguntas" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active && isAuthor()">
-                    <h1>Perguntas</h1>
+                <div class="createPost">
+                    <button id="myBtn" ng-click="createPost()" class="default-button">
+                        <i class="fa fa-plus"></i>
+                        Nova Publicação
+                    </button>
                 </div>
 
-                <div class="tags" style="display: none;" id="tags" ng-repeat="post in publicacoes" ng-click="openPost(post)">
-                    <h1>{{ post.tag }}</h1>
-                </div>
+                <div id="myModal" class="modal">
 
-                <div class="usuarios" style="display: none;" id="usuarios">
-                    <h1>Usuários</h1>
-                </div>
-
-                <div class="sem-respostas" style="display: none;" id="semRespostas">
-                    <h1>Sem Respostas</h1>
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <header>
+                            <p>Adicionar nova publicação</p>
+                            <span class="close">&times;</span>
+                        </header>
+                    </div>
+                  
                 </div>
 
                 <script>
