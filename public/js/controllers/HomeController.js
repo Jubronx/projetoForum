@@ -41,6 +41,10 @@ forum_app.controller('HomeController', function ($scope, $http, UserModel, $loca
         $location.path('/profile');
     }
 
+    $scope.replyPublicacao = function (publication) {
+        console.log(publication);
+    }
+
     $scope.openPost = function (post) {
         $scope.postOpened = true;
         $scope.actualPost = post;

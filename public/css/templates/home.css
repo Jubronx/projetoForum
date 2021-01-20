@@ -235,14 +235,48 @@
 
 .posts .inicial-expand {
     display: flex;
+    padding: 0 40px;
+}
+
+.separator {
+    border: 3px solid whitesmoke;
+    margin: 40px 0;
+    width: 90%;
+    box-shadow: 1px 2px 10px -1px rgb(0 0 0 / 25%);
+    background-color: whitesmoke;
+    border-radius: 40px;
+}
+
+.reply-box {
+    
+}
+
+.post-opened {
+    width: 90%;
+    height: 90%;
+}
+
+.post-opened-info p {
+    font-size: 20px;
+    margin-top: 16px;
+}
+
+.attachment-area {
+    background-color: #C4C4C4;
+    width: 90%;
+    height: 250px;
+    border-radius: 20px;
+    padding: 24px;
+    margin: 24px 0;
 }
 
 .close-post {
     margin-left: auto;
+    margin-bottom: 16px;
+    margin-right: 40px;
     place-self: center;
     font-size: 24px;
-    margin-right: 40px;
-}
+}   
 
 .modal {
     display: none; /* Hidden by default */
