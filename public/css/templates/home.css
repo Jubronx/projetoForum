@@ -157,6 +157,11 @@
     height: 500px;
 }
 
+.content-expand {
+    height: 90%;
+    transition-duration: 0.5s;
+}
+
 .menu {
     padding: 0 0 16px 0;
     width: 15%;
@@ -224,7 +229,17 @@
 
 .posts {
     width: 70%;
-    margin-right: 40px;
+    margin: 16px 40px 0px 0;
+}
+
+.posts .inicial-expand {
+    display: flex;
+}
+
+.close-post {
+    margin-left: auto;
+    place-self: center;
+    font-size: 24px;
 }
 
 .modal {

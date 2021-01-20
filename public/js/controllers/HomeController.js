@@ -1,6 +1,7 @@
 forum_app.controller('HomeController', function ($scope, $http, UserModel, $location) {
 
     $scope.loggedUser = UserModel.isUserLoggedIn();
+    $scope.userID = UserModel.getID();
 
     $scope.callPosts = function() {
         var request = $http({
@@ -12,11 +13,16 @@ forum_app.controller('HomeController', function ($scope, $http, UserModel, $loca
             if (response.data != 'error') {
                 console.log(response.data);
                 $scope.publicacoes = response.data;
+                $scope.myperguntas = $scope.publicacoes;
+                for (var pergunta in $scope.myperguntas) {
+                    return $scope.myperguntas[pergunta].fk_usuario === $scope.userID;
+                }
             } else {
                 console.log('deu erro');
             }
         })
     }
+    $scope.callPosts();
 
     $scope.login = function () {
         $location.path('/login');  
@@ -37,6 +43,7 @@ forum_app.controller('HomeController', function ($scope, $http, UserModel, $loca
 
     $scope.openPost = function (post) {
         $scope.postOpened = true;
+        $scope.actualPost = post;
     };
 
     var modal = document.getElementById("myModal");
@@ -91,6 +98,4 @@ forum_app.controller('HomeController', function ($scope, $http, UserModel, $loca
             link: 'semRespostas',
         }
     ];
-
-    $scope.callPosts();
 });

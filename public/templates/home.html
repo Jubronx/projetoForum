@@ -61,7 +61,7 @@
                 <img src="assets/img/construa.svg" width="100" height="100" alt="">
             </div>
         </div>
-        <div class="content">
+        <div class="content" ng-class='{ "content-expand": postOpened }'>
 
             <div class="menu">
                 <ul>
@@ -71,29 +71,39 @@
             
             <div class="posts-container">
                 <div class="posts">
-                    <div class="inicial" id="inicial">
-                        <h1>Em alta</h1>
-                        <div class="inicial-posts" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active == 0">
-                            <div class="post-title">
-                                <h1>{{post.title}}</h1>
-                            </div>
-                            <div class="post-info">
-                                <div class="votes">
-                                    <h2>{{post.upvotes / post.downvotes}}</h2>
-                                    <p>Rating</p>
+                    <div class="inicial" ng-class="{ 'inicial-expand': postOpened }" id="inicial">
+                        <div ng-hide="postOpened">
+                            <h1>Em alta</h1>
+                            <div class="inicial-posts" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active == 0">
+                                <div class="post-title">
+                                    <h1>{{post.title}}</h1>
                                 </div>
-                                <div class="post-replys">
-                                    <h2>5</h2>
-                                    <p>Respostas</p>
-                                </div>
-                                <div class="post-tag" ng-if="post.tag">
-                                    <p>{{post.tag}}</p>
+                                <div class="post-info">
+                                    <div class="votes">
+                                        <h2>{{post.upvotes / post.downvotes}}</h2>
+                                        <p>Rating</p>
+                                    </div>
+                                    <div class="post-replys">
+                                        <h2>5</h2>
+                                        <p>Respostas</p>
+                                    </div>
+                                    <div class="post-tag" ng-if="post.tag">
+                                        <p>{{post.tag}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="post-opened" ng-hide="!postOpened">
+                            <div>
+                                <h1>{{ actualPost.title }}</h1>
+                            </div>
+                        </div>
+                        <div class="close-post" ng-click="postOpened = false" ng-hide="!postOpened">
+                            <i class="fa fa-close"></i>
+                        </div>
                     </div>
     
-                    <div class="perguntas" style="display: none;" id="perguntas" ng-repeat="perguntas in publicacoes" ng-click="openPost(perguntas)" ng-if="perguntas.active">
+                    <div class="perguntas" style="display: none;" id="perguntas" ng-repeat="pergunta in myperguntas" ng-click="openPost(perguntas)" ng-if="perguntas.active">
                         <h1>Minhas perguntas</h1>
                     </div>
     
@@ -110,7 +120,7 @@
                     </div>
                 </div>
 
-                <div class="createPost">
+                <div class="createPost" ng-hide="postOpened">
                     <button id="myBtn" ng-click="createPost()" class="default-button">
                         <i class="fa fa-plus"></i>
                         Nova Publicação
@@ -130,14 +140,13 @@
                 </div>
 
                 <script>
-                $(document).ready(function(){
+                $(document).ready(function() {
                     $("a").click(function(event) {
                         event.preventDefault();
                         var href = $(this).attr('href');
                         $('#inicial, #perguntas, #tags, #usuarios, #semRespostas').hide();
                         $(href).show();
                     });
-
                 });
                 </script>
             </div>
