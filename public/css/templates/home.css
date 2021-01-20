@@ -230,6 +230,7 @@
 .posts {
     width: 70%;
     margin: 16px 40px 0px 0;
+    overflow-y: scroll;
 }
 
 .posts .inicial-expand {
@@ -241,8 +242,6 @@
     place-self: center;
     font-size: 24px;
     margin-right: 40px;
-    padding-right: 10px;
-    overflow-y: scroll;
 }
 
 .modal {
@@ -333,6 +332,7 @@
 
 .post-tag {
     margin-left: auto;
+    margin-bottom: 8px;
     padding: 8px;
     text-align: center;
     background-color: #d0d0d06b;

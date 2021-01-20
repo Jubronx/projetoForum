@@ -103,12 +103,43 @@
                         </div>
                     </div>
     
-                    <div class="perguntas" style="display: none;" id="perguntas" ng-repeat="pergunta in myperguntas" ng-click="openPost(perguntas)" ng-if="perguntas.active">
-                        <h1>Minhas perguntas</h1>
+                    <div class="perguntas" style="display: none;" id="perguntas" ng-repeat="pergunta in myperguntas" ng-click="openPost(perguntas)">
+                        <div ng-hide="postOpened">
+                            <h1>Minhas perguntas</h1>
+                            <div class="inicial-posts" ng-repeat="post in publicacoes" ng-click="openPost(post)" ng-if="post.active == 0">
+                                <div class="post-title">
+                                    <h1>{{post.title}}</h1>
+                                </div>
+                                <div class="post-info">
+                                    <div class="votes">
+                                        <h2>{{post.upvotes / post.downvotes}}</h2>
+                                        <p>Rating</p>
+                                    </div>
+                                    <div class="post-replys">
+                                        <h2>5</h2>
+                                        <p>Respostas</p>
+                                    </div>
+                                    <div class="post-tag" ng-if="post.tag">
+                                        <p>{{post.tag}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-opened" ng-hide="!postOpened">
+                            <div>
+                                <h1>{{ actualPost.title }}</h1>
+                            </div>
+                        </div>
+                        <div class="close-post" ng-click="postOpened = false" ng-hide="!postOpened">
+                            <i class="fa fa-close"></i>
+                        </div>
                     </div>
-    
-                    <div class="tags" style="display: none;" id="tags" ng-repeat="postTag in publicacoes" ng-click="openPost(post)">
-                        <h1>{{ postTag.tag }}</h1>
+
+                    <div class="tags" style="display: none;" id="tags">
+                        <h1>Tags</h1><br>
+                        <div ng-repeat="post in publicacoes" class="post-tag" ng-if="post.tag">
+                            <h1>{{post.tag}}</h1><br>
+                        </div>
                     </div>
     
                     <div class="usuarios" style="display: none;" id="usuarios">

@@ -1,7 +1,6 @@
 forum_app.controller('HomeController', function ($scope, $http, UserModel, $location) {
 
     $scope.loggedUser = UserModel.isUserLoggedIn();
-    $scope.userID = UserModel.getID();
 
     $scope.callPosts = function() {
         var request = $http({
@@ -11,14 +10,15 @@ forum_app.controller('HomeController', function ($scope, $http, UserModel, $loca
         });
         request.then(function (response) {
             if (response.data != 'error') {
-                console.log(response.data);
                 $scope.publicacoes = response.data;
-                $scope.myperguntas = $scope.publicacoes;
-                for (var pergunta in $scope.myperguntas) {
-                    return $scope.myperguntas[pergunta].fk_usuario === $scope.userID;
+                $scope.myperguntas = {};
+                for (var pergunta in $scope.publicacoes) {
+                    if ($scope.publicacoes[pergunta].fk_usuario === UserModel.getID()) {
+                        $scope.myperguntas[pergunta] = $scope.publicacoes[pergunta];
+                    }
                 }
             } else {
-                console.log('deu erro');
+                console.log('Deu erro');
             }
         })
     }
