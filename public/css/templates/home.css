@@ -240,6 +240,9 @@
     margin-left: auto;
     place-self: center;
     font-size: 24px;
+    margin-right: 40px;
+    padding-right: 10px;
+    overflow-y: scroll;
 }
 
 .modal {
@@ -342,3 +345,28 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.24), 
                 0 5px 50px 0 rgba(0,0,0,0.19);
 }
+
+.modal input, .modal textarea {
+    padding: 8px 16px;
+    margin: 10px 0;
+    font-size: 14px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+.modal button {
+    background-color: gray;
+    color: #ffffff;
+    display: inline-block;
+	cursor: pointer;
+	font-size: 16px;
+    padding: 12px 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+}
+

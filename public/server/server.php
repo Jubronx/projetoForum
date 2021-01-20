@@ -30,6 +30,7 @@
                 $_SESSION["name"] = $row["nome"];
                 $response['status'] = 'loggedin';
                 $response['user'] = $email;
+                $response['id'] = $row['id_usuario'];
                 $_SESSION['user'] = $email;
             } else {
                 $response = 'Wrong Password';
