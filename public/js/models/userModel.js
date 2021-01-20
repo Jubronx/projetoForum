@@ -30,6 +30,7 @@ forum_app.service('UserModel', function () {
     this.saveData = function (data) {
         useremail = data.user;
         id = data.id;
+        console.log(id);
         loggedin = true;
         localStorage.setItem('login', JSON.stringify({
              useremail: useremail,

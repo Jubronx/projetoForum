@@ -37,7 +37,36 @@ forum_app.controller('HomeController', function ($scope, $http, UserModel, $loca
 
     $scope.openPost = function (post) {
         $scope.postOpened = true;
+        $('.content').css('height', '90%');
+        $('.inicial').hide();
+        $('#post-detail').show();
+        $scope.title = post.title;
+        $scope.content = post.content;
     };
+
+    $scope.post = function() {
+        if (UserModel.isUserLoggedIn()) var userId = UserModel.getID();
+        else userId = 0;
+
+        var request = $http({
+            url: 'http://localhost/projetoForum/public/server/post.php',
+            method: "post",
+            data: {
+                id: userId,
+                title: $scope.title,
+                content: $scope.content,
+                tag: $scope.tag,
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+        request.then(function (response) {
+            if (response.data.status == 'ok') {
+                alert('Post cadastrado');
+            } else {
+                alert('Ocorreu um erro ao cadastrar o post. \nVerifique os dados e tente novamente!');
+            }
+        })
+    }
 
     var modal = document.getElementById("myModal");
 
